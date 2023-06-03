@@ -5,11 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.zerobase.cms.user.domain.SignUpForm;
 import com.zerobase.cms.user.domain.model.Customer;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.Assert;
 
 @SpringBootTest
 class SignUpCustomerServiceTest {
@@ -25,7 +23,7 @@ class SignUpCustomerServiceTest {
             .password("aaaa123!")
             .phone("01012345678")
             .build();
-        Customer customer = service.signUp(form);
+        Customer customer = service.signUpRequest(form);
 
         assertNotNull(customer.getId());
         assertNotNull(customer.getCreatedAt());
