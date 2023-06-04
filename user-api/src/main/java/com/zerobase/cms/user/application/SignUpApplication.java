@@ -28,7 +28,7 @@ public class SignUpApplication {
             Customer customer = signUpCustomerService.signUpRequest(form);
             String code = getRandomCode();
             SendMailForm sendMailForm = SendMailForm.builder()
-                .from("zerotest@sandbox6bb81553342140e6a988f2e9fffff930.mailgun.org")
+                .from("email@.mailgun.org")
                 .to(form.getEmail())
                 .subject("Verification Email!")
                 .text(getVerificationEmailBody(
@@ -53,7 +53,7 @@ public class SignUpApplication {
             Seller seller = signUpSellerService.signUpRequest(form);
             String code = getRandomCode();
             SendMailForm sendMailForm = SendMailForm.builder()
-                .from("zerotest@sandbox6bb81553342140e6a988f2e9fffff930.mailgun.org")
+                .from("email@.mailgun.org")
                 .to(form.getEmail())
                 .subject("Verification Email!")
                 .text(getVerificationEmailBody(
