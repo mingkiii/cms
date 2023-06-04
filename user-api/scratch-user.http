@@ -1,0 +1,70 @@
+####### 고객
+### 회원가입
+POST http://localhost:8081/signup/customer
+Content-Type: application/json
+
+{
+  "birth": "1999-01-01",
+  "email": "email@gmail.com",
+  "name": "홍길동",
+  "password": "string123!",
+  "phone": "01012341234"
+}
+### 이메일 인증
+GET http://localhost:8081/signup/customer/verify?email=email@gmail.com&code=oDUi93f521
+
+### 로그인
+POST http://localhost:8081/signin/customer
+Content-Type: application/json
+
+{
+  "email": "email@gmail.com",
+  "password": "string123!"
+}
+### 회원 정보 조회
+GET http://localhost:8081/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODU4OTk5NDIsImV4cCI6MTY4NTk4NjM0Mn0.xMe98coqWmjFAjZwqEhlnYCzKqfeBofLiIjlY8b2ViQ
+
+
+### 잔액 변경
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODU4OTk5NDIsImV4cCI6MTY4NTk4NjM0Mn0.xMe98coqWmjFAjZwqEhlnYCzKqfeBofLiIjlY8b2ViQ
+
+
+{
+  "from": "server",
+  "message": "save money",
+  "money": 5000
+}
+
+####### 판매자
+### 회원가입
+POST http://localhost:8081/signup/seller
+Content-Type: application/json
+
+{
+  "birth": "1999-01-01",
+  "email": "email@gmail.com",
+  "name": "홍길동",
+  "password": "string123!",
+  "phone": "01012341234"
+}
+### 이메일 인증
+GET http://localhost:8081/signup/seller/verify?email=email@gmail.com&code=oDUi93f521
+
+### 로그인
+POST http://localhost:8081/signin/seller
+Content-Type: application/json
+
+{
+  "email": "email@gmail.com",
+  "password": "string123!"
+}
+
+### 회원 정보 조회
+GET http://localhost:8081/seller/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODU4OTk5NDIsImV4cCI6MTY4NTk4NjM0Mn0.xMe98coqWmjFAjZwqEhlnYCzKqfeBofLiIjlY8b2ViQ
+
