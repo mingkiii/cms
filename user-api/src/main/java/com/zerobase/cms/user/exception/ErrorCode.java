@@ -19,7 +19,7 @@ public enum ErrorCode {
     NOT_FOUND_USER(HttpStatus.BAD_REQUEST, "일치하는 회원이 없습니다."),
 
     // balance
-    NOT_ENOUIGH_BALANCE(HttpStatus.BAD_REQUEST, "잔액이 부족합니다.");
+    NOT_ENOUGH_BALANCE(HttpStatus.BAD_REQUEST, "잔액이 부족합니다.");
 
 
     private final HttpStatus httpStatus;
