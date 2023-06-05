@@ -1,0 +1,28 @@
+### 상품 추가
+POST http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw
+
+{
+  "description": "상품 설명",
+  "items": [
+    {
+      "count": 1,
+      "name": "230",
+      "price": 10000
+    }
+  ],
+  "name": "나이키 에어포스"
+}
+
+### 상품 item 추가
+POST http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw
+
+{
+  "productId": 1,
+  "count": 1,
+  "name": "250",
+  "price": 10000
+}
