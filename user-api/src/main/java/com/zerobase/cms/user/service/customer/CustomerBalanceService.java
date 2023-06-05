@@ -1,6 +1,6 @@
 package com.zerobase.cms.user.service.customer;
 
-import static com.zerobase.cms.user.exception.ErrorCode.NOT_ENOUIGH_BALANCE;
+import static com.zerobase.cms.user.exception.ErrorCode.NOT_ENOUGH_BALANCE;
 import static com.zerobase.cms.user.exception.ErrorCode.NOT_FOUND_USER;
 
 import com.zerobase.cms.user.domain.ChangeBalanceForm;
@@ -8,7 +8,6 @@ import com.zerobase.cms.user.domain.model.CustomerBalanceHistory;
 import com.zerobase.cms.user.domain.repository.CustomerBalanceHistoryRepository;
 import com.zerobase.cms.user.domain.repository.CustomerRepository;
 import com.zerobase.cms.user.exception.CustomException;
-import com.zerobase.cms.user.exception.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,7 +32,7 @@ public class CustomerBalanceService {
                         .orElseThrow(() -> new CustomException(NOT_FOUND_USER)))
                     .build());
         if (customerBalanceHistory.getCurrentMoney() + form.getMoney() < 0) {
-            throw new CustomException(NOT_ENOUIGH_BALANCE);
+            throw new CustomException(NOT_ENOUGH_BALANCE);
         }
 
         customerBalanceHistory = CustomerBalanceHistory.builder()
