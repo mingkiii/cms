@@ -23,8 +23,8 @@ X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2
 {
   "productId": 1,
   "count": 2,
-  "name": "290",
-  "price": 100000
+  "name": "220",
+  "price": 50000
 }
 
 ### 상품 수정
@@ -49,3 +49,13 @@ X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2
   "name": "300",
   "price": 100000
 }
+
+### 상품 삭제
+DELETE http://localhost:8082/seller/product?id=2
+Content-Type: application/json
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw
+
+### 상품 item 삭제
+DELETE http://localhost:8082/seller/product/item?id=2
+Content-Type: application/json
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw

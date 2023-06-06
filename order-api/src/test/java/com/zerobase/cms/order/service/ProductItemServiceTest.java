@@ -1,6 +1,7 @@
 package com.zerobase.cms.order.service;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -14,6 +15,7 @@ import com.zerobase.cms.order.exception.CustomException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import org.h2.command.dml.MergeUsing.When;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -173,5 +175,34 @@ class ProductItemServiceTest {
 
         // When/Then
         assertThrows(CustomException.class, () -> productItemService.updateProductItem(sellerId, form));
+    }
+
+    @Test
+    @DisplayName("아이템 삭제-성공")
+    void success_deleteProductItem() {
+        // Given
+        Long sellerId = 1L;
+        Long itemId = 1L;
+
+        ProductItem existingProductItem = ProductItem.builder()
+            .id(itemId)
+            .sellerId(sellerId)
+            .name("Existing Item")
+            .price(100)
+            .count(2)
+            .build();
+
+        when(productItemRepository.findById(itemId)).thenReturn(
+            Optional.of(existingProductItem));
+
+        //When
+        productItemService.deleteProductItem(sellerId, itemId);
+
+        // Then
+        verify(productItemRepository, times(1)).findById(itemId);
+        verify(productItemRepository, times(1)).delete(existingProductItem);
+        when(productItemRepository.findById(itemId)).thenReturn(Optional.empty());
+        Optional<ProductItem> deletedItem = productItemRepository.findById(itemId);
+        assertFalse(deletedItem.isPresent());
     }
 }
