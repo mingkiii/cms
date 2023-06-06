@@ -7,12 +7,12 @@ X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2
   "description": "상품 설명",
   "items": [
     {
-      "count": 1,
-      "name": "250",
-      "price": 70000
+      "count": 2,
+      "name": "에어포스",
+      "price": 100000
     }
   ],
-  "name": "아디다스"
+  "name": "나이키 에어"
 }
 
 ### 상품 item 추가
@@ -59,3 +59,11 @@ X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2
 DELETE http://localhost:8082/seller/product/item?id=2
 Content-Type: application/json
 X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw
+
+### 상품 검색
+GET http://localhost:8082/search/product?name=나이키
+Content-Type: application/json
+
+### 상품 상세 정보 조회
+GET http://localhost:8082/search/product/detail?productId=1
+Content-Type: application/json
