@@ -1,6 +1,7 @@
 package com.zerobase.cms.order.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -15,6 +16,7 @@ import com.zerobase.cms.order.domain.product.AddProductForm;
 import com.zerobase.cms.order.domain.product.AddProductItemForm;
 import com.zerobase.cms.order.domain.product.UpdateProductForm;
 import com.zerobase.cms.order.domain.product.UpdateProductItemForm;
+import com.zerobase.cms.order.domain.repository.ProductItemRepository;
 import com.zerobase.cms.order.domain.repository.ProductRepository;
 import com.zerobase.cms.order.exception.CustomException;
 import com.zerobase.cms.order.exception.ErrorCode;
@@ -29,6 +31,7 @@ import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
@@ -36,6 +39,9 @@ class ProductServiceTest {
 
     @Mock
     private ProductRepository productRepository;
+
+    @Mock
+    private ProductItemRepository productItemRepository;
 
     private ProductService productService;
 
@@ -147,5 +153,52 @@ class ProductServiceTest {
 
         assertEquals(ErrorCode.NOT_FOUND_PRODUCT, exception.getErrorCode());
         assertTrue(exception.getMessage().contains("없습니다."));
+    }
+
+    @Test
+    @DisplayName("상품 삭제-성공")
+    void success_deleteProduct() {
+        // Given
+        Long sellerId = 1L;
+        Long productId = 1L;
+
+        Product existingProduct = Product.builder()
+            .id(productId)
+            .sellerId(sellerId)
+            .name("Existing Product")
+            .description("This is an existing product")
+            .productItems(Arrays.asList(
+                ProductItem.builder().id(1L).name("Item 1").price(100).count(2)
+                    .build(),
+                ProductItem.builder().id(2L).name("Item 2").price(200).count(3)
+                    .build()
+            ))
+            .build();
+
+        when(productRepository.findBySellerIdAndId(sellerId,
+            productId)).thenReturn(Optional.of(existingProduct));
+
+        // When
+        productService.deleteProduct(sellerId, productId);
+
+        // Then
+        verify(productRepository, times(1)).findBySellerIdAndId(sellerId,
+            productId);
+        verify(productRepository, times(1)).delete(existingProduct);
+
+        when(productRepository.findById(productId)).thenReturn(
+            Optional.empty());
+        Optional<Product> deletedProduct = productRepository.findById(
+            productId);
+        assertFalse(deletedProduct.isPresent());
+        // 상품 아이템 같이 삭제 되었는지 확인
+        List<ProductItem> deletedItems = existingProduct.getProductItems();
+        for (ProductItem item : deletedItems) {
+            when(productItemRepository.findById(item.getId())).thenReturn(
+                Optional.empty());
+            Optional<ProductItem> deletedItem = productItemRepository.findById(
+                item.getId());
+            assertFalse(deletedItem.isPresent());
+        }
     }
 }
