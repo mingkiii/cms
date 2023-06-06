@@ -8,11 +8,11 @@ X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2
   "items": [
     {
       "count": 1,
-      "name": "230",
-      "price": 10000
+      "name": "250",
+      "price": 70000
     }
   ],
-  "name": "나이키 에어포스"
+  "name": "아디다스"
 }
 
 ### 상품 item 추가
@@ -22,7 +22,30 @@ X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2
 
 {
   "productId": 1,
-  "count": 1,
-  "name": "250",
-  "price": 10000
+  "count": 2,
+  "name": "290",
+  "price": 100000
+}
+
+### 상품 수정
+PUT http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw
+
+{
+  "description": "운동화",
+  "id": 1,
+  "name": "아디다스 한정판"
+}
+
+### 상품 item 수정
+PUT http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw
+
+{
+  "id": 2,
+  "count": 3,
+  "name": "300",
+  "price": 100000
 }
