@@ -34,4 +34,4 @@ Use : Spring, Jpa, Mysql, Redis, Docker, AWS
 
 ### 판매자
 - [x] 상품 등록, 수정
-- [ ] 상품 삭제
+- [x] 상품 삭제
