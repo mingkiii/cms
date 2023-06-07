@@ -7,9 +7,9 @@ import com.zerobase.cms.order.domain.repository.ProductRepository;
 import com.zerobase.cms.order.exception.CustomException;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
-@RestController
+@Service
 @RequiredArgsConstructor
 public class ProductSearchService {
 
