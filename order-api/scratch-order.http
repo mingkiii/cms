@@ -1,64 +1,64 @@
 ### 상품 추가
 POST http://localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MTQ2MDU5LCJleHAiOjE2ODYyMzI0NTl9.nEmlKWzB8iqrean_zUfGKoOecij5nRcGh03geWWDnZU
 
 {
-  "description": "상품 설명",
+  "description": "운동화",
   "items": [
     {
-      "count": 2,
-      "name": "에어포스",
+      "count": 1,
+      "name": "240",
       "price": 100000
     }
   ],
-  "name": "나이키 에어"
+  "name": "나이키 에어포스"
 }
 
 ### 상품 item 추가
 POST http://localhost:8082/seller/product/item
 Content-Type: application/json
-X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MTQ2MDU5LCJleHAiOjE2ODYyMzI0NTl9.nEmlKWzB8iqrean_zUfGKoOecij5nRcGh03geWWDnZU
 
 {
   "productId": 1,
   "count": 2,
-  "name": "220",
-  "price": 50000
+  "name": "230",
+  "price": 80000
 }
 
 ### 상품 수정
 PUT http://localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MTQ2MDU5LCJleHAiOjE2ODYyMzI0NTl9.nEmlKWzB8iqrean_zUfGKoOecij5nRcGh03geWWDnZU
 
 {
   "description": "운동화",
   "id": 1,
-  "name": "아디다스 한정판"
+  "name": "나이키 에어포스"
 }
 
 ### 상품 item 수정
 PUT http://localhost:8082/seller/product/item
 Content-Type: application/json
-X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MTQ2MDU5LCJleHAiOjE2ODYyMzI0NTl9.nEmlKWzB8iqrean_zUfGKoOecij5nRcGh03geWWDnZU
 
 {
-  "id": 2,
-  "count": 3,
-  "name": "300",
+  "id": 1,
+  "count": 2,
+  "name": "220",
   "price": 100000
 }
 
 ### 상품 삭제
 DELETE http://localhost:8082/seller/product?id=2
 Content-Type: application/json
-X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MTQ2MDU5LCJleHAiOjE2ODYyMzI0NTl9.nEmlKWzB8iqrean_zUfGKoOecij5nRcGh03geWWDnZU
 
 ### 상품 item 삭제
 DELETE http://localhost:8082/seller/product/item?id=2
 Content-Type: application/json
-X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MDAxMzA4LCJleHAiOjE2ODYwODc3MDh9.8c_BanUB4ZI5vLyNxigcEgfEYFF930KDSBa-mD6BSmw
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MTQ2MDU5LCJleHAiOjE2ODYyMzI0NTl9.nEmlKWzB8iqrean_zUfGKoOecij5nRcGh03geWWDnZU
 
 ### 상품 검색
 GET http://localhost:8082/search/product?name=나이키
@@ -67,3 +67,23 @@ Content-Type: application/json
 ### 상품 상세 정보 조회
 GET http://localhost:8082/search/product/detail?productId=1
 Content-Type: application/json
+
+### 장바구니 상품 추가
+POST http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODYxNDU5NDAsImV4cCI6MTY4NjIzMjM0MH0.OiSdAGVswALQpUJTjwq5Cf0GX36LPw4IIX6IEq-VoEw
+
+{
+  "description": "운동화",
+  "id": 1,
+  "items": [
+    {
+      "count": 1,
+      "id": 1,
+      "name": "240",
+      "price": 100000
+    }
+  ],
+  "name": "나이키 에어포스",
+  "sellerId": 1
+}
