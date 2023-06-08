@@ -44,9 +44,9 @@ Content-Type: application/json
 X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg2MTQ2MDU5LCJleHAiOjE2ODYyMzI0NTl9.nEmlKWzB8iqrean_zUfGKoOecij5nRcGh03geWWDnZU
 
 {
-  "id": 1,
-  "count": 2,
-  "name": "220",
+  "id": 2,
+  "count": 1,
+  "name": "230",
   "price": 100000
 }
 
@@ -78,12 +78,17 @@ X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2
   "id": 1,
   "items": [
     {
-      "count": 1,
-      "id": 1,
-      "name": "240",
-      "price": 100000
+      "count": 2,
+      "id": 2,
+      "name": "230",
+      "price": 80000
     }
   ],
   "name": "나이키 에어포스",
   "sellerId": 1
 }
+
+### 장바구니 조회
+GET http://localhost:8082/customer/cart/show
+Content-Type: application/json
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODYxNDU5NDAsImV4cCI6MTY4NjIzMjM0MH0.OiSdAGVswALQpUJTjwq5Cf0GX36LPw4IIX6IEq-VoEw
