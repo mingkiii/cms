@@ -1,5 +1,6 @@
 package com.zerobase.cms.order.application;
 
+import static com.zerobase.cms.order.exception.ErrorCode.CART_IS_EMPTY;
 import static com.zerobase.cms.order.exception.ErrorCode.ORDER_FAIL_CHECK_CART;
 import static com.zerobase.cms.order.exception.ErrorCode.ORDER_FAIL_NOT_ENOUGH_MONEY;
 
@@ -36,6 +37,9 @@ public class CartOrderApplication {
         Cart orderCart = cartApplication.refreshCart(cart);
         if (orderCart.getMessages().size() > 0) {
             throw new CustomException(ORDER_FAIL_CHECK_CART);
+        }
+        if (orderCart.getProducts().isEmpty()) {
+            throw new CustomException(CART_IS_EMPTY);
         }
         CustomerDto customerDto = userClient.getCustomerInfo(token).getBody();
 
