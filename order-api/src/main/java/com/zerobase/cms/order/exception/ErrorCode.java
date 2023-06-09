@@ -15,6 +15,7 @@ public enum ErrorCode {
     ITEM_COUNT_NOT_ENOUGH(HttpStatus.BAD_REQUEST, "상품의 수량이 부족합니다."),
 
     ORDER_FAIL_CHECK_CART(HttpStatus.BAD_REQUEST, "주문 불가! 장바구니를 확인 해주세요."),
+    CART_IS_EMPTY(HttpStatus.BAD_REQUEST, "주문 불가! 장바구니가 비어 있습니다."),
     ORDER_FAIL_NOT_ENOUGH_MONEY(HttpStatus.BAD_REQUEST, "주문 불가! 잔액이 부족합니다.")
 
 
