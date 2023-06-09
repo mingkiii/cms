@@ -117,7 +117,7 @@ public class CartOrderApplication {
         }
 
         SendMailForm sendMailForm = SendMailForm.builder()
-            .from("zerotest@sandbox6bb81553342140e6a988f2e9fffff930.mailgun.org")
+            .from("test@mailgun.org")
             .to(customerEmail)
             .subject("Order Result")
             .text(emailContent.toString())
