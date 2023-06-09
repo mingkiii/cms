@@ -6,6 +6,7 @@ import com.zerobase.cms.order.application.CartOrderApplication;
 import com.zerobase.cms.order.domain.product.AddProductCartForm;
 import com.zerobase.cms.order.domain.redis.Cart;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -49,10 +50,10 @@ public class CustomerCartController {
     }
 
     @PostMapping("/order")
-    public ResponseEntity<Cart> order(
+    public ResponseEntity<String> order(
         @RequestHeader(name = "X-AUTH-TOKEN") String token,
         @RequestBody Cart cart) {
         cartOrderApplication.order(token, cart);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.status(HttpStatus.OK).body("Order confirmation email sent successfully");
     }
 }
