@@ -11,7 +11,6 @@ import com.zerobase.cms.order.domain.product.UpdateProductItemForm;
 import com.zerobase.cms.order.domain.repository.ProductItemRepository;
 import com.zerobase.cms.order.domain.repository.ProductRepository;
 import com.zerobase.cms.order.exception.CustomException;
-import com.zerobase.cms.order.exception.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +20,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class ProductItemService {
     private final ProductRepository productRepository;
     private final ProductItemRepository productItemRepository;
+
+    @Transactional
+    public ProductItem getProductItem(Long id) {
+        return productItemRepository.getById(id);
+    }
 
     @Transactional
     public Product addProductItem(Long sellerId, AddProductItemForm form) {

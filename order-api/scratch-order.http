@@ -120,3 +120,29 @@ X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2
     }
   ]
 }
+
+### 장바구니 주문
+POST http://localhost:8082/customer/cart/order
+Content-Type: application/json
+X-AUTH-TOKEN:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1K2VPNlRXaHZUaC9FSG45Y25sbGJOUlNtR2FsYnB4NHhPWmNOa1ZiUHVvPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODYxNDU5NDAsImV4cCI6MTY4NjIzMjM0MH0.OiSdAGVswALQpUJTjwq5Cf0GX36LPw4IIX6IEq-VoEw
+
+{
+  "customerId": 1,
+  "products": [
+    {
+      "id": 1,
+      "sellerId": 1,
+      "name": "나이키 에어포스",
+      "description": "운동화",
+      "items": [
+        {
+          "id": 1,
+          "name": "240",
+          "count": 1,
+          "price": 100000
+        }
+      ]
+    }
+  ],
+  "message": []
+}
